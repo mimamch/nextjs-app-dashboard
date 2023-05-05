@@ -13,8 +13,8 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
-      // https://vercel.com/design/color
       colors: {
+        semidark: 'rgb(17,17,19)',
         gray: colors.zinc,
         'gray-1000': 'rgb(17,17,19)',
         'gray-1100': 'rgb(10,10,11)',

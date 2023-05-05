@@ -4,7 +4,7 @@ export default function Button({
   kind = 'default',
   ...props
 }: React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  kind?: 'default' | 'error';
+  kind?: 'default' | 'error' | 'primary';
 }) {
   return (
     <button
@@ -13,6 +13,8 @@ export default function Button({
           kind === 'default',
         'bg-vercel-pink text-red-50 hover:bg-pink-600 hover:text-white':
           kind === 'error',
+        'bg-vercel-blue hover:bg-vercel-blue/90 text-gray-100 hover:text-white':
+          kind === 'primary',
       })}
       {...props}
     />

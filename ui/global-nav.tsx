@@ -14,40 +14,38 @@ export function GlobalNav() {
   const close = () => setIsOpen(false);
 
   return (
-    <div className="fixed top-0 z-10 flex w-full flex-col border-b border-gray-800 bg-black lg:bottom-0 lg:z-auto lg:w-72 lg:border-b-0 lg:border-r lg:border-gray-800">
-      <div className="flex h-14 items-center py-4 px-4 lg:h-auto">
-        <Link
-          href="/"
-          className="group flex w-full items-center gap-x-2.5"
-          onClick={close}
-        >
-          <div className="h-7 w-7 rounded-full border border-white/30 group-hover:border-white/50">
-            <NextLogo />
-          </div>
-
-          <h3 className="font-semibold tracking-wide text-gray-400 group-hover:text-gray-50">
-            App Router <span className="Work in progress">(Beta)</span>
-          </h3>
-        </Link>
-      </div>
+    <div className="fixed top-0 z-20 flex w-full flex-col border-b border-gray-800 dark:bg-black lg:bottom-0  lg:w-72 lg:border-b-0 lg:border-gray-800 dark:lg:border-r">
       <button
         type="button"
-        className="group absolute right-0 top-0 flex h-14 items-center gap-x-2 px-4 lg:hidden"
+        className="group absolute left-0 top-0  flex h-14 items-center gap-x-2 px-4 lg:hidden"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <div className="font-medium text-gray-100 group-hover:text-gray-400">
-          Menu
-        </div>
         {isOpen ? (
           <XIcon className="block w-6 text-gray-400" />
         ) : (
           <MenuAlt2Icon className="block w-6 text-gray-400" />
         )}
       </button>
+      <div className=" z-50 hidden h-14 items-center justify-end px-4 py-4 md:flex md:justify-start lg:h-auto">
+        <Link
+          href="/"
+          className="group   flex  items-center gap-x-2.5"
+          onClick={close}
+        >
+          <div className="h-7 w-7 rounded-full border border-white/30 group-hover:border-white/50">
+            <NextLogo />
+          </div>
+
+          <h3 className="text-semidark  font-semibold tracking-wide dark:text-gray-400 dark:group-hover:text-gray-50">
+            App Router
+          </h3>
+        </Link>
+      </div>
 
       <div
         className={clsx('overflow-y-auto lg:static lg:block', {
-          'fixed inset-x-0 bottom-0 top-14 mt-px bg-black': isOpen,
+          'fixed inset-x-0 bottom-0 top-14 mt-px bg-white dark:bg-black':
+            isOpen,
           hidden: !isOpen,
         })}
       >
@@ -55,7 +53,7 @@ export function GlobalNav() {
           {demos.map((section) => {
             return (
               <div key={section.name}>
-                <div className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-gray-400/80">
+                <div className="text-semidark/60 mb-2 px-3 text-xs font-semibold uppercase tracking-wider dark:text-gray-400/80">
                   <div>{section.name}</div>
                 </div>
 
@@ -89,10 +87,10 @@ function GlobalNavItem({
       onClick={close}
       href={`/${item.slug}`}
       className={clsx(
-        'block rounded-md px-3 py-2 text-sm font-medium hover:text-gray-300',
+        'hover:text-semidark block rounded-md px-3 py-2 text-sm font-medium dark:hover:text-gray-300',
         {
-          'text-gray-400 hover:bg-gray-800': !isActive,
-          'text-white': isActive,
+          'text-gray-500 dark:text-gray-400 dark:hover:bg-gray-800': !isActive,
+          'text-semidark dark:text-white': isActive,
         },
       )}
     >
