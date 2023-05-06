@@ -8,7 +8,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import clsx from 'clsx';
 import Button from '@/ui/button';
 
-export default function page() {
+export default function Page() {
   const validationSchema = Yup.object({
     title: Yup.string().required().max(30).min(5),
     content: Yup.string().required().min(10),
