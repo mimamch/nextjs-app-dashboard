@@ -1,9 +1,17 @@
-import { ExternalLink } from '#/ui/external-link';
+import { ExternalLink } from '@/ui/external-link';
 
 export default function Page() {
   return (
-    <div className="prose prose-sm prose-invert max-w-none">
+    <div className="prose prose-sm dark:prose-invert max-w-none">
       <h1 className="text-xl font-bold">Layouts</h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. At voluptates
+        eligendi aliquid itaque dignissimos deleniti sed praesentium. Totam
+        optio nulla eum animi, molestiae dignissimos minus a praesentium
+        consequuntur natus minima commodi facere eaque illo quas sequi quae
+        itaque. Minus eligendi corrupti illum placeat voluptatibus ipsam
+        perferendis. Earum provident quaerat debitis!
+      </p>
 
       <ul>
         <li>

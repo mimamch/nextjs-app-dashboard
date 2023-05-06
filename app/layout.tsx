@@ -1,8 +1,8 @@
-import '#/styles/globals.css';
-import { AddressBar } from '#/ui/address-bar';
-import Byline from '#/ui/byline';
-import GlobalHeader from '#/ui/headers';
-import { GlobalNav } from '#/ui/global-nav';
+import '@/styles/globals.css';
+import { AddressBar } from '@/ui/address-bar';
+import Byline from '@/ui/byline';
+import GlobalHeader from '@/ui/headers';
+import { GlobalNav } from '@/ui/global-nav';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="">
-      <body className="dark:bg-gray-1100 text-semidark overflow-y-scroll bg-[url('/grid.svg')] pb-36  dark:text-gray-400">
+      <body className="dark:bg-gray-1100 overflow-y-scroll bg-[url('/grid.svg')] pb-36 text-gray-600  dark:text-gray-400">
         <GlobalNav />
         <GlobalHeader />
 
@@ -33,12 +33,12 @@ export default function RootLayout({
               </div>
             </div>
 
-            <div className="bg-vc-border-gradient rounded-lg p-px shadow-lg shadow-black/20">
+            <div className="dark:bg-vc-border-gradient rounded-lg p-px shadow-lg shadow-black/20">
               <div className="rounded-lg bg-white p-3.5 dark:bg-black lg:p-6">
                 {children}
               </div>
             </div>
-            <Byline className="fixed sm:hidden" />
+            <Byline className="fixed hidden md:block" />
           </div>
         </div>
       </body>

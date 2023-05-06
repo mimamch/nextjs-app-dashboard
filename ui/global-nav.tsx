@@ -1,9 +1,9 @@
 'use client';
 
-import { demos, type Item } from '#/lib/demos';
-import { NextLogo } from '#/ui/next-logo';
+import { demos, type Item } from '@/lib/demos';
+import { NextLogo } from '@/ui/next-logo';
 import Link from 'next/link';
-import { useSelectedLayoutSegment } from 'next/navigation';
+import { useSelectedLayoutSegments } from 'next/navigation';
 import { MenuAlt2Icon, XIcon } from '@heroicons/react/solid';
 import clsx from 'clsx';
 import { useState } from 'react';
@@ -37,7 +37,7 @@ export function GlobalNav() {
           </div>
 
           <h3 className="text-semidark  font-semibold tracking-wide dark:text-gray-400 dark:group-hover:text-gray-50">
-            App Router
+            Admin Dashboard
           </h3>
         </Link>
       </div>
@@ -79,9 +79,9 @@ function GlobalNavItem({
   item: Item;
   close: () => false | void;
 }) {
-  const segment = useSelectedLayoutSegment();
-  const isActive = item.slug === segment;
-
+  const segments = useSelectedLayoutSegments();
+  const isActive =
+    JSON.stringify(segments) == JSON.stringify(item.slug.split('/'));
   return (
     <Link
       onClick={close}
