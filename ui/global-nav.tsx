@@ -9,12 +9,12 @@ import clsx from 'clsx';
 import { useState } from 'react';
 import Byline from './byline';
 
-export function GlobalNav() {
+export default function GlobalNav() {
   const [isOpen, setIsOpen] = useState(false);
   const close = () => setIsOpen(false);
 
   return (
-    <div className="fixed top-0 z-20 flex w-full flex-col border-b border-gray-800 dark:bg-black lg:bottom-0  lg:w-72 lg:border-b-0 lg:border-gray-800 dark:lg:border-r">
+    <div className="fixed top-0 z-20 flex w-full flex-col border-b border-gray-800 dark:bg-black lg:bottom-0  lg:w-64 lg:border-b-0 lg:border-gray-800 dark:lg:border-r">
       <button
         type="button"
         className="group absolute left-0 top-0  flex h-14 items-center gap-x-2 px-4 lg:hidden"
