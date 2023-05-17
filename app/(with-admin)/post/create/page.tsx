@@ -1,5 +1,4 @@
 'use client';
-import InputText from '@/ui/input/input-text';
 import React from 'react';
 import * as Yup from 'yup';
 import InputValidationSpan from '@/ui/input/input-validation-span';
@@ -7,15 +6,12 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import clsx from 'clsx';
 import Button from '@/ui/button';
-import { getSession } from 'next-auth/react';
 
 export default function Page() {
   const validationSchema = Yup.object({
     title: Yup.string().required().max(30).min(5),
     content: Yup.string().required().min(10),
   });
-
-  getSession().then((e) => console.log(e));
 
   const {
     register,

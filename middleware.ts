@@ -4,7 +4,7 @@ import { withAuth } from 'next-auth/middleware';
 
 import { NextRequest, NextResponse } from 'next/server';
 
-export default function middleware(req: NextRequest) {
+export function middleware(req: NextRequest) {
   if (
     !req.cookies.get('next-auth.session-token')?.value &&
     !req.nextUrl.pathname.startsWith('/auth')
@@ -32,4 +32,4 @@ export const config = {
   ],
 };
 
-// export default withAuth(middleware);
+export default withAuth(middleware, {});

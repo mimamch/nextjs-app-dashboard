@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 
-export default function page() {
+export default function Page() {
   const router = useRouter();
 
   const [loading, setLoading] = useState(false);
