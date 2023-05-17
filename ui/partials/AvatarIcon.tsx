@@ -3,6 +3,8 @@
 import React from 'react';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import * as Avatar from '@radix-ui/react-avatar';
+import { signOut } from 'next-auth/react';
+import { toast } from 'react-hot-toast';
 
 export default function AvatarIcon() {
   return (
@@ -24,10 +26,17 @@ export default function AvatarIcon() {
       </DropdownMenu.Trigger>
       {/* <DropdownMenu.Portal> */}
       <DropdownMenu.Content
-        className=" min-w-[220px] rounded-md bg-white px-2 py-2 dark:bg-gray-800"
+        className=" min-w-[220px] rounded-md bg-white shadow-md dark:bg-gray-900"
         sideOffset={5}
       >
-        <DropdownMenu.Item className="group relative flex h-[25px] select-none items-center rounded ">
+        <DropdownMenu.Item
+          onClick={() =>
+            signOut()
+              .then(() => toast.success('Logged Out!'))
+              .catch((err) => toast.error(err))
+          }
+          className="group relative flex select-none items-center rounded px-2 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+        >
           <button className="w-full text-left">Log Out</button>
         </DropdownMenu.Item>
 

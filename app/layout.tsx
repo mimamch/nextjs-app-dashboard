@@ -1,6 +1,7 @@
 import '@/styles/globals.css';
 import { Metadata } from 'next';
 import React, { PropsWithChildren } from 'react';
+import { Toaster } from 'react-hot-toast';
 
 export const metadata: Metadata = {
   title: {
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" className="">
       <body className="dark:bg-gray-1100 overflow-y-scroll bg-[url('/grid.svg')] text-gray-600  dark:text-gray-400">
+        <Toaster />
         {children}
       </body>
     </html>
